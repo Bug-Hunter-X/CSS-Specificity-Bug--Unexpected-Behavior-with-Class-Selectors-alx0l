@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+.container {
+  width: 100%;
+}
+
+.container .item {
+  width: 50%;
+}
+
+.container .item.special {
+  width: 25%;
+}
+
+.item.special {
+  width: 75%;
+}
+```
+
+The unexpected behavior arises from the specificity rules of CSS.  `.item.special` has higher specificity than `.container .item.special` even though the latter appears to be more specific. The selector `.item.special` will override `.container .item.special` because it has higher specificity due to having two class selectors.
