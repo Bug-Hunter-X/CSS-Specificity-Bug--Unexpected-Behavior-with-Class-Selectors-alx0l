@@ -1,0 +1,21 @@
+The solution involves using the `!important` flag to force the desired style to be applied:
+
+```css
+.container {
+  width: 100%;
+}
+
+.container .item {
+  width: 50%;
+}
+
+.container .item.special {
+  width: 25%;
+  /*This selector's style is applied because of !important*/
+}
+
+.item.special {
+  width: 75%; /*This selector will be overriden*/
+}
+```
+By using `!important` we explicitly make sure that `.container .item.special` is applied. Note that `!important` should be used sparingly as it can make CSS harder to maintain.
